@@ -30,5 +30,5 @@ The Train Reservation System is designed to:
 
 
 
-## 📸 Sample Output
+
 
