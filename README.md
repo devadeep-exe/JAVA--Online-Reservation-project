@@ -1,4 +1,4 @@
-# 🚆 Train Reservation System (Java + MySQL)
+# Train Reservation System (Java + MySQL)
 
 A **console-based train ticket booking system** built with **Java** and **MySQL**.  
 This project allows users to log in, reserve tickets with randomly generated seat numbers, berth types, and coach assignments, and cancel tickets using a PNR.
