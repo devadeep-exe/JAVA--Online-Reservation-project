@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         try (Connection conn = DBConnection.getConnection()) {
 
-            Scanner sc = new Scanner(System.in);  // ✅ Shared Scanner for entire program
+            Scanner sc = new Scanner(System.in);   
 
             System.out.print("Username: ");
             String username = sc.nextLine();
@@ -15,7 +15,7 @@ public class Main {
             String password = sc.nextLine();
 
             if (Loginsystem.login(username, password, conn)) {
-                System.out.println("✅ Login successful!");
+                System.out.println(" Login successful!");
 
                 while (true) {
                     System.out.println("\n1. Reserve Ticket");
@@ -23,30 +23,32 @@ public class Main {
                     System.out.println("3. Exit");
                     System.out.print("Enter your choice: ");
 
-                    if (!sc.hasNextInt()) break; // Handle stray newline or Ctrl+D
+                    if (!sc.hasNextInt()) break; 
                     int choice = sc.nextInt();
-                    sc.nextLine(); // Clear newline
+                    sc.nextLine(); 
 
                     switch (choice) {
-                        case 1 -> ReservationSystem.reserveTicket(username, conn, sc);  //  pass Scanner
-                        case 2 -> CancellationSystem.cancelTicket(username, conn, sc);  // pass Scanner
+                        case 1 -> ReservationSystem.reserveTicket(username, conn, sc);  
+                        case 2 -> CancellationSystem.cancelTicket(username, conn, sc); 
+                
                         case 3 -> {
-                            System.out.println("👋 Exiting. Thank you!");
+                            System.out.println(" Exiting. Thank you!");
                             return;
                         }
-                        default -> System.out.println("❌ Invalid choice.");
+                        default -> System.out.println("Invalid choice.");
                     }
                 }
             } else {
-                System.out.println("❌ Invalid credentials.");
+                System.out.println(" Invalid credentials.");
             }
 
         } catch (Exception e) {
-            System.out.println("❌ System error.");
+            System.out.println(" System error.");
             e.printStackTrace();
         }
     }
 }
+
 
 
 
